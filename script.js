@@ -110,8 +110,20 @@ let employees = [
     }
 ]
 
+class emp {
+    constructor(id, fullName, gender, designation, company, salary, project, experience) {
+        this.id = id;
+        this.fullName = fullName;
+        this.gender = gender;
+        this.designation = designation;
+        this.company = company;
+        this.salary = salary;
+        this.project = project;
+        this.experience = experience;
+    }
+}
 
-
+let empData = new emp(1, "reddy", "male", "FSWD", "some", 50000, 5, "5 years");
 
 function displayData(alldata) {
     let tableBody = document.querySelector(".table-body");
@@ -137,4 +149,3 @@ function displayData(alldata) {
 }
 
 displayData(employees);
-// tableBody.appendChild(data);
