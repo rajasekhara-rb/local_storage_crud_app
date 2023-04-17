@@ -110,20 +110,7 @@ let employees = [
     }
 ]
 
-// class emp {
-//     constructor(id, fullName, gender, designation, company, salary, project, experience) {
-//         this.id = id;
-//         this.fullName = fullName;
-//         this.gender = gender;
-//         this.designation = designation;
-//         this.company = company;
-//         this.salary = salary;
-//         this.project = project;
-//         this.experience = experience;
-//     }
-// }
 
-// let empData = new emp(1, "reddy", "male", "FSWD", "some", 50000, 5, "5 years");
 
 function displayData(alldata) {
     let tableBody = document.querySelector(".table-body");
@@ -140,8 +127,8 @@ function displayData(alldata) {
                 <td>${data.project}</td>
                 <td>${data.experience}</td>
                 <td>
-                <button class="btn btn-primary mx-1"><i class="fas fa-edit fa-1x text-light"></i></button>
-                <button class="btn btn-primary mx-1"><i class="fas fa-trash fa-1x text-light"></i></button>
+                <button id="edit-btn" class="btn btn-primary mx-1"><i class="fas fa-edit fa-1x text-light"></i></button>
+                <button id="delete-btn" class="btn btn-primary mx-1"><i class="fas fa-trash fa-1x text-light"></i></button>
                 </td>
             </tr>`
     }
@@ -149,3 +136,36 @@ function displayData(alldata) {
 }
 
 displayData(employees);
+
+let createDataBtn = document.querySelector("#create").addEventListener("click", () => {
+    console.log("clicked btn")
+    let formdiv = document.querySelector("#form-div");
+    formdiv.style.display = "block";
+    let cBtn = document.getElementById("create");
+    cBtn.style.display = "none";
+});
+
+let crossBtn = document.getElementById("crossBtn").addEventListener("click", () => {
+    let formdiv = document.querySelector("#form-div");
+    formdiv.style.display = "none";
+    let cBtn = document.getElementById("create");
+    cBtn.style.display = "block";
+});
+
+let empData = new emp(1, "reddy", "male", "FSWD", "some", 50000, 5, "5 years");
+displayData(empData);
+
+class emp {
+    constructor(id, fullName, gender, designation, company, salary, project, experience) {
+        this.id = id;
+        this.fullName = fullName;
+        this.gender = gender;
+        this.designation = designation;
+        this.company = company;
+        this.salary = salary;
+        this.project = project;
+        this.experience = experience;
+    }
+}
+
+
