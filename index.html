@@ -16,37 +16,35 @@
 
 <body>
     <div class="alert-message-bar">
-    <!-- for alert message display -->
+        <!-- for alert message display -->
     </div>
     <div class="container">
         <button class="btn btn-primary my-2 mt-3" id="create">Create Data</button>
 
     </div>
 
-    <div id="form-div" class="container my-2" style="display:none;">
+    <div id="form-div" class="container-fluid  p-5 bg-warning" style="display:none;">
         <div id="form-heading" class="alert alert-warning d-flex justify-content-between">
             <h1>Details Form</h1>
             <i id="crossBtn" class="bi bi-x-circle-fill" style="font-size: 25px;"></i>
         </div>
-        <form action="" class="">
-            <div class="form-group alert alert-primary my-1">
+        <form id="form">
+            <!-- <div class="form-group alert alert-primary my-1">
                 <label for="id" class="form-label">Id:</label>
                 <input type="number" class="form-control" placeholder="Enter Id" id="id">
-            </div>
+            </div> -->
             <div class="form-group alert alert-primary my-1">
                 <label for="name" class="form-label">Name:</label>
                 <input type="text" class="form-control" placeholder="Enter name" id="name">
             </div>
             <div class="form-group alert alert-primary my-1">
-                <label for="name" class="form-label">Gender:</label>
-                <div class="form-check">
-                    <input type="radio" class="form-check-input" id="male" value="male" name="gender">
-                    <label for="gender" class="form-check-label">Male</label>
-                </div>
-                <div class="form-check">
-                    <input type="radio" class="form-check-input" id="female" value="female" name="gender">
-                    <label for="gender" class="form-check-label">Female</label>
-                </div>
+                <label for="gender" class="form-label">Gender:</label>
+                <select name="gender" id="gender">
+                    <option value="" disabled></option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+
             </div>
             <div class="form-group alert alert-primary my-1">
                 <label for="designation" class="form-label">Designation:</label>
@@ -69,7 +67,7 @@
                 <input type="number" class="form-control" placeholder="Enter experience" id="experience">
             </div>
 
-            <button class="btn btn-primary my-2 mt-3" id="submit" type="submit">submit</button>
+            <button class="btn btn-primary my-2 mt-3" id="submit" type="submit">Submit</button>
         </form>
     </div>
 
@@ -77,6 +75,7 @@
         <h1 class="my-1">This is a CRUD app</h1>
     </div>
     <div class="container my-3">
+        <button id="delete" class="btn btn-danger p-2 m-3">Delete Table Data</button>
         <table class="table table-dark">
             <thead>
                 <th>Id</th>
@@ -89,7 +88,7 @@
                 <th>Experience</th>
                 <th>Actions</th>
             </thead>
-            <tbody class="table-body">
+            <tbody id="table-body">
             </tbody>
         </table>
     </div>
@@ -97,4 +96,3 @@
     </main>
     <script src="script.js"></script>
 </body>
-
